@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+<head>
+    {% load static %}
+    <title>{% block title %}Información{% endblock title %}</title>
+</head>
+<body>
+    {% block body %}
+    <div class="container-fluid">
+        <div class="p-5">
+            <div class="card card-body bg-black bg-gradient text-light">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="{% static '20210530_111222.jpg' %}" alt="foto" class="img-fluid rounded-circle mt-2">
+                    </div>
+                    <div class="col-9 my-auto text-center">
+                        <h2>Jean Pool Oliver Yantas Inocente</h2>
+                        <p>Eres tan grande como te propongas serlo, y puedes llegar tan lejos como te dé la gana, ánimo.😎🏃‍♂️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock body %}
+</body>
+

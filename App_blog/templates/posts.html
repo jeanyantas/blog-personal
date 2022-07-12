@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+<head>
+    <title>{% block title %}Inicio{% endblock title %}</title>
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <p class="p-3 h4">
+                    Publicaciones
+                </p>
+                {% for post in posts %}
+                <div class="p-3">
+                    <div class="card card-body bg-black bg-gradient text-light">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{ post.image.url }}" alt="{{post.title}}" class="img-fluid rounded-3 mt-2">
+                            </div>
+                            <div class="col-9">
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.description|truncatechars:100 }}</p>
+                                <p>{{ post.date|date:'M d Y'|upper }}</p>
+
+                                <a href="{% url 'App_blog:post_detail' post.id %}" class="btn btn-primary">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 h4">
+                    Índice
+                    <div class="mt-5 list-group">
+                        {% for post in posts %}
+                        <a href="{% url 'App_blog:post_detail' post.id %}" class="h6 list-group-item list-group-item-action"><li class="indice-li">{{ post.title }}</li></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock body %}
+</body>
