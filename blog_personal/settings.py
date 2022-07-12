@@ -80,11 +80,8 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '',
-        'NAME': '',
-        'OPTIONS': {
-            'init_comand': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'PASSWORD': '123456',
+        'NAME': 'blog_personal'
     }
 }
 
