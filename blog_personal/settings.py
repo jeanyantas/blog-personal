@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'blog_personal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
+        'ENGINE': 'heroku_7da1f1ac840777b',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
         'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'NAME': 'blog_personal'
+        'USER': 'bbb29d5da73d94',
+        'PASSWORD': 'deacd6e8',
+        'NAME': 'mysql-blogpersonal'
     }
 }
 
