@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'blog_personal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'heroku_7da1f1ac840777b',
+        'ENGINE': 'django.db.backends.mysql',
         'HOST': 'us-cdbr-east-06.cleardb.net',
         'PORT': '3306',
         'USER': 'bbb29d5da73d94',
@@ -84,6 +85,13 @@ DATABASES = {
         'NAME': 'mysql-blogpersonal'
     }
 }
+
+        # 'ENGINE': 'heroku_7da1f1ac840777b',
+        # 'HOST': 'us-cdbr-east-06.cleardb.net',
+        # 'PORT': '3306',
+        # 'USER': 'bbb29d5da73d94',
+        # 'PASSWORD': 'deacd6e8',
+        # 'NAME': 'mysql-blogpersonal'
 
 
 # Password validation
@@ -128,3 +136,5 @@ MEDIA_URL ='/public/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
